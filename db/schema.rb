@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_02_214240) do
+ActiveRecord::Schema.define(version: 2022_09_02_215650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2022_09_02_214240) do
     t.string "animal_type"
     t.integer "hours_rq"
     t.datetime "date_of_service"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pricings", force: :cascade do |t|
+    t.integer "booking_id"
+    t.integer "user_id"
+    t.integer "hours_rq"
+    t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

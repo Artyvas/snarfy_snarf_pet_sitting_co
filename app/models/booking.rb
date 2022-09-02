@@ -6,4 +6,6 @@ class Booking < ApplicationRecord
   validates :animal_type, presence: true
   validates :hours_rq, numericality: { greater_than: 0 }
   validates :date_of_service, presence: true
+
+  
 end
