@@ -1,0 +1,6 @@
+{
+  id: @pricing.id,
+  user_id: @pricing.user_id,
+  booking_id: @pricing.booking_id,
+  total_price: @pricing.total_price,
+}

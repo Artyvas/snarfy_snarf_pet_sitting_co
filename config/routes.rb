@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     get "/bookings/:id" => "bookings#show"
     patch "/bookings/:id" => "bookings#update"
     delete "/bookings/:id" => "bookings#destroy"
+
+    post "/pricings" => "pricings#create"
+    get "/pricings" => "pricings#index"
+    get "/pricings/:id" => "pricings#show"
   end
 end
