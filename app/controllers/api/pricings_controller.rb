@@ -1,4 +1,6 @@
 class Api::PricingsController < ApplicationController
+  before_action :authenticate_user
+
   def index
     @pricing = current_user.pricings
     render "index.json.jb"
