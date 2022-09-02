@@ -1,4 +1,6 @@
 class Api::BookingsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @bookings = Booking.all
     if params[:search]
