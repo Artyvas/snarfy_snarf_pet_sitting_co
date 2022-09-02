@@ -14,8 +14,11 @@ class Api::BookingsController < ApplicationController
       hours_rq: params[:hours_rq],
       date_of_service: params[:date_of_service],
     )
-    @booking.save
-    render "show.json.jb"
+    if @booking.save
+      render "show.json.jb"
+    else
+      render json: { errors: @booking.errors.full_messages }, status: 422
+    end
   end
 
   def show
@@ -32,8 +35,11 @@ class Api::BookingsController < ApplicationController
     @booking.animal_type = params[:animal_type] || @booking.animal_type
     @booking.hours_rq = params[:hours_rq] || @booking.hours_rq
     @booking.date_of_service = params[:date_of_service] || @booking.date_of_service
-    @booking.save
-    render "show.json.jb"
+    if @booking.save
+      render "show.json.jb"
+    else
+      render json: { errors: @booking.errors.full_messages }, status: 422
+    end
   end
 
   def destroy
