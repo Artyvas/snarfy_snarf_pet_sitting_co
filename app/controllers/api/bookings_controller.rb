@@ -2,7 +2,7 @@ class Api::BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     if params[:search]
-      @bookings = @bookings.where("name ILIKE ?", "%#{params[:search]}%")
+      @bookings = @bookings.where("last_name ILIKE ?", "%#{params[:search]}%")
     end
     render "index.json.jb"
   end
