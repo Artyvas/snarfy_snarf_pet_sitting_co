@@ -1,12 +1,3 @@
 @bookings.map do |booking|
-  {
-    id: booking.id,
-    first_name: booking.first_name,
-    last_name: booking.last_name,
-    animal_first: booking.animal_first,
-    animal_last: booking.animal_last,
-    animal_type: booking.animal_type,
-    hours_rq: booking.hours_rq,
-    date_of_service: booking.date_of_service,
-  }
+  render partial: "booking.json.jb", locals: { booking: booking }
 end
